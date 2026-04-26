@@ -1,5 +1,5 @@
 {
-  "name": "@memoria/brain",
+  "name": "@henrycamposeco/memoria",
   "version": "0.1.0",
   "description": "Memoria: Persistent Memory for AI Agents",
   "type": "module",

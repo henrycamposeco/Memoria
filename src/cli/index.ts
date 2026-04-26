@@ -36,7 +36,7 @@ program
 
     const mcpConfig = {
       command: 'npx',
-      args: ['-y', '@memoria/brain'],
+      args: ['-y', '@henrycamposeco/memoria'],
       env: {}
     };
 

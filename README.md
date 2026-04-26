@@ -32,7 +32,7 @@ graph TD
 ### 1. Installation & Setup
 Initialize the Memoria environment on your machine:
 ```bash
-npx @memoria/brain setup
+npx @henrycamposeco/memoria setup
 ```
 This creates the necessary database and vector storage in a local `.memoria` directory within your project root.
 

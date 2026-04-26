@@ -69,5 +69,5 @@ Expose the following tools through the MCP server:
 
 ## 5. Success Criteria
 - The agent can call `mem_remember` and get highly relevant results in <200ms.
-- A user can say `npm install @memoria/brain` and have a working memory system in seconds.
+- A user can say `npm install @henrycamposeco/memoria` and have a working memory system in seconds.
 - Memory retrieval never exceeds a reasonable token budget (e.g., 2000 tokens) regardless of database size.
