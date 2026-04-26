@@ -41,6 +41,10 @@ All notable technical changes derived from Memoria persistent storage.
   - *Technical Detail*: Refactored storage logic to use project-local encapsulation. The SQLite database and vector index are now stored in a '.memoria' directory within the project root instead of the global home directory. Migrated all existing memories and vectors to the local directory to ensure continuity.
   - *Type*: decision
 
+- **Project Pushed to GitHub & UI Simplified** (ID: 26)
+  - *Technical Detail*: Configured remote repository 'origin' and pushed the complete project to GitHub. Also documented manual UI refinements to the dashboard: switched to a high-contrast light theme (#dddddd) and simplified the header by removing background gradients and logo filters for a cleaner look. Environment is now fully backed up and ready for collaboration.
+  - *Type*: decision
+
 ### Fixed
 - **Fix dashboard port collision** (ID: 17)
   - *Technical Detail*: Moved dashboard default port from 3000 to 3001 to avoid collisions with other local services.
