@@ -50,3 +50,7 @@ All notable technical changes derived from Memoria persistent storage.
   - *Technical Detail*: Moved dashboard default port from 3000 to 3001 to avoid collisions with other local services.
   - *Type*: bug
 
+- **Documentation Inconsistencies Corrected** (ID: 27)
+  - *Technical Detail*: Fixed inconsistencies in README.md. Updated the storage path description from global (~/.memoria) to project-local (./.memoria) and corrected the dashboard URL to point to port 3001. Documentation now matches the actual system state.
+  - *Type*: bug
+
