@@ -52,7 +52,7 @@ program
           const content = JSON.parse(fs.readFileSync(client.path, 'utf8'));
           content.mcpServers = content.mcpServers || {};
           content.mcpServers.memoria = mcpConfig;
-          
+
           fs.writeFileSync(client.path, JSON.stringify(content, null, 2));
           console.log(`[SUCCESS] Automatically added Memoria to ${client.name} config.`);
         } catch (e: any) {
@@ -83,7 +83,7 @@ program
   .action(async (options) => {
     const { SQLiteStorage } = await import('../core/SQLiteStorage.js');
     const { EmbeddingManager } = await import('../core/EmbeddingManager.js');
-    
+
     const storage = new SQLiteStorage();
     const embeddings = new EmbeddingManager();
     await storage.initialize();
@@ -117,7 +117,7 @@ program
 
     const personaType = persona as any;
     const personaObj = (PERSONAS as any)[personaType];
-    
+
     if (!personaObj) {
       console.error(`Error: Invalid persona "${persona}". Valid types are: ${Object.keys(PERSONAS).join(', ')}`);
       process.exit(1);
@@ -133,13 +133,13 @@ program
 program
   .command('dashboard')
   .description('Launch the Memoria Dashboard GUI')
-  .option('-p, --port <number>', 'Port to run the dashboard on', '3001')
+  .option('-p, --port <number>', 'Port to run the dashboard on', '3000')
   .action(async (options) => {
     const { startDashboardServer } = await import('../dashboard/server.js');
     const port = parseInt(options.port);
     await startDashboardServer(port);
   });
-  
+
 program
   .command('changelog')
   .description('Generate a Semantic Developer Changelog from project memories')
@@ -151,12 +151,12 @@ program
     await storage.initialize();
 
     const observations = await storage.listObservations(project, 1000);
-    
+
     // Safety check for unrecorded changes
     if (!options.force && observations.length > 0) {
       const lastObs = observations[0];
       const lastTimestamp = new Date(lastObs.timestamp + 'Z').getTime(); // Assume UTC
-      
+
       const unrecordedFiles: string[] = [];
       const extensions = ['.ts', '.js', '.html', '.css', '.json', '.md'];
       const ignoreDirs = ['node_modules', 'dist', '.memoria', '.git'];
@@ -167,7 +167,7 @@ program
           if (ignoreDirs.includes(file)) continue;
           const fullPath = path.join(dir, file);
           const stat = fs.statSync(fullPath);
-          
+
           if (stat.isDirectory()) {
             checkDir(fullPath);
           } else if (extensions.includes(path.extname(file))) {
@@ -197,7 +197,7 @@ program
     }
 
     const changelogPath = path.join(process.cwd(), 'CHANGELOG.md');
-    
+
     let existingContent = '';
     if (fs.existsSync(changelogPath)) {
       existingContent = fs.readFileSync(changelogPath, 'utf8');
@@ -226,14 +226,14 @@ program
       let tag = 'Added';
       if (obs.type === 'bug') tag = 'Fixed';
       else if (obs.type === 'decision' || obs.type === 'architecture') tag = 'Changed';
-      
+
       groups[tag].push(obs);
     });
 
     // Format and sync content
     const date = new Date().toISOString().split('T')[0];
     const dateHeader = `## [${date}] - Developer Update`;
-    
+
     // Group existing entries from the same date if they exist
     const newGroups: Record<string, string[]> = {};
     for (const [tag, items] of Object.entries(groups)) {
@@ -274,7 +274,7 @@ program
             const nextTagIndex = dateSection.indexOf('### ', tagIndex + tagHeader.length);
             const tagSectionEnd = nextTagIndex !== -1 ? nextTagIndex : dateSection.length;
             const tagContent = dateSection.substring(tagIndex, tagSectionEnd).trim();
-            
+
             const updatedTagContent = `${tagContent}\n\n${entries.join('\n\n')}\n\n`;
             dateSection = dateSection.replace(tagSectionEnd === dateSection.length ? dateSection.substring(tagIndex) : dateSection.substring(tagIndex, tagSectionEnd), updatedTagContent);
           } else {
@@ -291,7 +291,7 @@ program
         for (const [tag, entries] of Object.entries(newGroups)) {
           newEntry += `### ${tag}\n${entries.join('\n\n')}\n\n`;
         }
-        
+
         const lines = content.split('\n');
         const titleIndex = lines.findIndex(l => l.startsWith('# '));
         const insertIndex = titleIndex !== -1 ? titleIndex + 2 : 0;

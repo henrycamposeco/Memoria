@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export async function startDashboardServer(port: number = 3001) {
+export async function startDashboardServer(port: number = 3000) {
   const app = express();
   app.use(cors());
   app.use(express.json());
@@ -20,7 +20,7 @@ export async function startDashboardServer(port: number = 3001) {
   await storage.initialize();
   await embeddings.initialize();
   const hybridSearch = new HybridSearch(storage, embeddings);
-  
+
   const api = new DashboardAPI(storage, embeddings, hybridSearch);
 
   // API Endpoints
@@ -47,13 +47,13 @@ export async function startDashboardServer(port: number = 3001) {
     const personas = await api.getPersonas();
     res.json(personas);
   });
-  
+
   app.delete('/api/memories/:id', async (req, res) => {
     const id = parseInt(req.params.id);
     const result = await api.deleteMemory(id);
     res.json(result);
   });
-  
+
   app.patch('/api/memories/:id', async (req, res) => {
     try {
       const { title, content } = req.body;
@@ -95,7 +95,7 @@ export async function startDashboardServer(port: number = 3001) {
   // Serve static frontend (when built)
   const frontendPath = path.join(__dirname, '..', '..', 'dist', 'dashboard', 'public');
   const assetsPath = path.join(__dirname, '..', '..', 'assets');
-  
+
   app.use(express.static(frontendPath));
   app.use('/assets', express.static(assetsPath));
 
