@@ -18,7 +18,7 @@
     "dashboard": "tsx src/cli/index.ts dashboard",
     "save-changelog": "tsx src/cli/index.ts changelog",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "npm test && npm run build"
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "mcp",
