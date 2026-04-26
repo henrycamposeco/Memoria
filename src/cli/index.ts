@@ -133,7 +133,7 @@ program
 program
   .command('dashboard')
   .description('Launch the Memoria Dashboard GUI')
-  .option('-p, --port <number>', 'Port to run the dashboard on', '3000')
+  .option('-p, --port <number>', 'Port to run the dashboard on', '3001')
   .action(async (options) => {
     const { startDashboardServer } = await import('../dashboard/server.js');
     const port = parseInt(options.port);

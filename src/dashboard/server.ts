@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export async function startDashboardServer(port: number = 3000) {
+export async function startDashboardServer(port: number = 3001) {
   const app = express();
   app.use(cors());
   app.use(express.json());
