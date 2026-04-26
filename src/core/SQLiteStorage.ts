@@ -10,7 +10,7 @@ export class SQLiteStorage implements StorageProvider {
   private dbPath: string;
 
   constructor(dbPath?: string) {
-    this.dbPath = dbPath || path.join(os.homedir(), '.memoria', 'memoria.db');
+    this.dbPath = dbPath || path.join(process.cwd(), '.memoria', 'memoria.db');
   }
 
   async initialize(): Promise<void> {

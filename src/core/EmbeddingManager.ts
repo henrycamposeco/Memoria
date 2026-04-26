@@ -10,7 +10,7 @@ export class EmbeddingManager {
   private indexPath: string;
 
   constructor(indexPath?: string) {
-    this.indexPath = indexPath || path.join(os.homedir(), '.memoria', 'vectors');
+    this.indexPath = indexPath || path.join(process.cwd(), '.memoria', 'vectors');
   }
 
   async initialize(): Promise<void> {

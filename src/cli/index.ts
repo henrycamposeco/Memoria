@@ -14,7 +14,7 @@ program
   .command('setup')
   .description('Initialize Memoria data directory and configure MCP clients')
   .action(async () => {
-    const memoriaDir = path.join(os.homedir(), '.memoria');
+    const memoriaDir = path.join(process.cwd(), '.memoria');
     const dbPath = path.join(memoriaDir, 'memoria.db');
     const vectorsDir = path.join(memoriaDir, 'vectors');
 

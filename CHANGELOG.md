@@ -33,6 +33,14 @@ All notable technical changes derived from Memoria persistent storage.
   - *Technical Detail*: Switched the project persona to 'grumpy'. Responses will now be brutally honest and direct, focusing on high standards and no tolerance for technical debt. buckle up.
   - *Type*: decision
 
+- **Local Repository Initialized** (ID: 24)
+  - *Technical Detail*: Initialized local Git repository for the 'Memoria' project. Created a .gitignore to exclude build artifacts and sensitive data. Committed all source files with an initial message. Ready to push to a remote repository once a URL is provided.
+  - *Type*: decision
+
+- **Project-Local Storage Encapsulation Implemented** (ID: 25)
+  - *Technical Detail*: Refactored storage logic to use project-local encapsulation. The SQLite database and vector index are now stored in a '.memoria' directory within the project root instead of the global home directory. Migrated all existing memories and vectors to the local directory to ensure continuity.
+  - *Type*: decision
+
 ### Fixed
 - **Fix dashboard port collision** (ID: 17)
   - *Technical Detail*: Moved dashboard default port from 3000 to 3001 to avoid collisions with other local services.
