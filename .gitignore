@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.memoria/
+*.log
+scratch/
+.env
+.DS_Store
