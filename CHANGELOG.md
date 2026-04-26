@@ -53,3 +53,16 @@ All notable technical changes derived from Memoria persistent storage.
   - *Technical Detail*: Fixed a critical mismatch between local dev and production MCP configurations. Standardized the dashboard to port 3001 and ensured the MCP server correctly identifies the local project root. Updated README to guide users on connecting their MCP clients to the local 'dist' instead of the global NPM package.
   - *Type*: bug
 
+- **Package Renamed to @henrycamposeco/memoria** (ID: 30)
+  - *Technical Detail*: Renamed the package to @henrycamposeco/memoria to resolve NPM scope ownership 403 errors during publication. Updated package.json, README.md, and all internal references.
+  - *Type*: decision
+
+### Fixed
+- **Documentation Inconsistencies Corrected** (ID: 27)
+  - *Technical Detail*: Fixed inconsistencies in README.md. Updated the storage path description from global (~/.memoria) to project-local (./.memoria) and corrected the dashboard URL to point to port 3001. Documentation now matches the actual system state.
+  - *Type*: bug
+
+- **Fix dashboard port collision** (ID: 17)
+  - *Technical Detail*: Moved dashboard default port from 3000 to 3001 to avoid collisions with other local services.
+  - *Type*: bug
+
