@@ -45,6 +45,10 @@ All notable technical changes derived from Memoria persistent storage.
   - *Technical Detail*: Configured remote repository 'origin' and pushed the complete project to GitHub. Also documented manual UI refinements to the dashboard: switched to a high-contrast light theme (#dddddd) and simplified the header by removing background gradients and logo filters for a cleaner look. Environment is now fully backed up and ready for collaboration.
   - *Type*: decision
 
+- **License Updated to Apache 2.0** (ID: 28)
+  - *Technical Detail*: Updated the project license from ISC to Apache-2.0 in both README.md and package.json to reflect the official release standards.
+  - *Type*: decision
+
 ### Fixed
 - **Fix dashboard port collision** (ID: 17)
   - *Technical Detail*: Moved dashboard default port from 3000 to 3001 to avoid collisions with other local services.
