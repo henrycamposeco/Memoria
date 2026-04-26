@@ -69,14 +69,14 @@ This uses **Semantic Changelog** tags (Added, Changed, Fixed) and filters out du
 | Command | Description |
 | :--- | :--- |
 | `npm run setup` | Initial environment configuration. |
-| `npm run dashboard` | Launch the Web GUI at `http://localhost:3001`. |
+| `npm run dashboard` | Launch the Web GUI at `http://localhost:3000`. |
 | `npm run save-changelog` | Generate/Update `CHANGELOG.md` from memories. |
 | `npm run cli store -- [options]` | Manually inject a memory into the system. |
 | `npm run cli persona [project] [type]` | Set branding style (architect, slang, grumpy). |
 
 **Manual Store Example:**
 ```bash
-npm run cli store -- -t "Fix Port" -c "Moved to 3001" --type bug
+npm run cli store -- -t "change title" -c "change content..." --type bug
 ```
 
 ---
