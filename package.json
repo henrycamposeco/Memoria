@@ -1,6 +1,6 @@
 {
   "name": "@henrycamposeco/memoria",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Memoria: Persistent Memory for AI Agents",
   "type": "module",
   "main": "dist/mcp/server.js",

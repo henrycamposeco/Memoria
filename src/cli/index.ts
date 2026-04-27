@@ -36,7 +36,7 @@ program
 
     const mcpConfig = {
       command: 'npx',
-      args: ['-y', '@henrycamposeco/memoria'],
+      args: ['-y', '@henrycamposeco/memoria', 'mcp'],
       env: {}
     };
 
@@ -139,6 +139,13 @@ program
     const { startDashboardServer } = await import('../dashboard/server.js');
     const port = parseInt(options.port);
     await startDashboardServer(port);
+  });
+
+program
+  .command('mcp')
+  .description('Run the Memoria MCP server')
+  .action(async () => {
+    await import('../mcp/server.js');
   });
 
 program
