@@ -45,8 +45,8 @@ To use your local development version with project-local storage:
 {
   "mcpServers": {
     "memoria": {
-      "command": "node",
-      "args": ["D:/Antigravity/Memoria/dist/mcp/server.js"],
+      "command": "npx",
+      "args": ["@henrycamposeco/memoria", "mcp"],
       "env": {}
     }
   }
